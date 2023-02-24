@@ -12,7 +12,8 @@
 std::string box(int width, int height)
 {
   std::string shape = "";
-  for (int i = 0; i < height; i++)
+  //loops to print the height and width 
+  for (int i = 0; i < height; i++) 
     {
       for(int j = 0; j < width; j++)
         {
@@ -29,9 +30,9 @@ std::string box(int width, int height)
 std::string checkerboard(int width, int height)
 {
   std::string shape = "";
-  for (int i = 0; i < height; i++) //height(column). loop goes through the columns first 
+  for (int i = 0; i < height; i++) 
     {
-      for(int j = 0; j < width; j++) //width(row)
+      for(int j = 0; j < width; j++) 
         {
           if (i % 2 == 0 && j % 2 == 0) //If column is even and the row coordinate is even.
           {
@@ -152,3 +153,41 @@ std::string trapezoid(int width, int height)
   return shape;
 }
 
+
+
+//Task G
+std::string checkerboard3x3 (int width, int height)
+{
+  std::string shape = "";
+  for (int i = 0; i < height; i++)
+  {
+    for (int j = 0; j < width; j++)
+      {
+        //testing if the rows and columns are even or odd. taking into accout 3 columns for 1 
+        if ((i/3) % 2 == 0)
+        {
+          if ((j/3) % 2 != 0)
+          {
+            shape = shape + " ";
+          }
+          else
+          {
+            shape = shape + "*";
+          }
+        }
+        else
+        {
+          if ((j/3) % 2 != 0)
+          {
+            shape = shape + "*";
+          }
+          else
+          {
+            shape = shape + " ";
+          }
+        }
+      }
+    shape = shape + "\n";
+  }
+  return shape;
+}
